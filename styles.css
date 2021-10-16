@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Normally default font size 16px for most of the browsers. So 16px = 1rem, but it makes calculations difficult  */
+  font-size: 62.5%;
+  /* This makes 1rem = 10px, so the calculation becomes easy. Like 18px = 1.8rem, 33px = 3.3rem, etc. */
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+  background-image: linear-gradient(
+    to bottom,
+    var(--soft-violet),
+    var(--soft-blue)
+  );
+  height: 100vh;
+  width: 100vw;
+}
+
+.faq-container {
+  padding: 14rem 2.2rem 8rem;
+  position: relative;
+  max-width: 111rem;
+  margin: auto;
+}
+
+.pattern-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28rem;
+  width: 100%;
+}
+
+.pattern-mobile .logo-mobile {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.woman-mobile {
+  position: absolute;
+  top: 15%;
+  transform: translateX(-55%);
+  z-index: 10;
+}
+
+.bg-mobile {
+  position: absolute;
+  top: 55%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.pattern-desktop {
+  display: none;
+}
+
+.box-desktop {
+  display: none;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 13rem 2.5rem 5rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2.5em;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.faq {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding-right: 3rem;
+  position: relative;
+}
+
+.faq-question {
+  color: var(--very-dark-grayish-blue);
+  font-weight: 400;
+  margin: 1.5rem 0;
+}
+
+.faq.active .faq-question {
+  color: var(--very-dark-desaturated-blue);
+  font-weight: 700;
+}
+
+.faq-answer {
+  display: none;
+}
+
+.faq.active .faq-answer {
+  display: block;
+  color: var(--dark-grayish-blue);
+  margin: 0 0 1.5rem;
+}
+
+.btn {
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.faq.active .btn {
+  transform: rotateX(180deg);
+}
+
+@media (min-width: 769px) {
+  .faq-container {
+    padding: 15rem 8rem 8rem;
+  }
+
+  .pattern-mobile {
+    display: none;
+  }
+
+  .card {
+    padding: 8rem 5rem;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  .pattern-desktop {
+    display: block;
+    width: 50%;
+    height: 30rem;
+    float: left;
+  }
+
+  .pattern-desktop .logo-desktop {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .box-desktop {
+    display: block;
+    position: absolute;
+    top: 35.5rem;
+    left: -1.6rem;
+    z-index: 20;
+    transform: scale(0.75);
+  }
+
+  .woman-desktop {
+    position: absolute;
+    top: 5.1rem;
+    left: -11rem;
+    width: 34.7rem;
+    z-index: 15;
+  }
+
+  .bg-desktop {
+    position: absolute;
+    top: -4.5rem;
+    left: -23.4rem;
+    width: 47.6rem;
+    z-index: 10;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  .faqs {
+    width: 50%;
+    margin-left: auto;
+  }
+
+  .faq:hover h3 {
+    color: var(--soft-red);
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1025px) {
+  .card {
+    margin: 0 auto;
+  }
+
+  .box-desktop {
+    display: block;
+    position: absolute;
+    top: 33.5rem;
+    left: -1.2rem;
+    z-index: 20;
+    transform: scale(0.85);
+  }
+
+  .woman-desktop {
+    position: absolute;
+    top: 0rem;
+    left: -11rem;
+    width: 40rem;
+  }
+
+  .bg-desktop {
+    position: absolute;
+    top: -9rem;
+    left: -20.7rem;
+    width: 50rem;
+  }
+}
